@@ -1,4 +1,5 @@
 import Header from "../../shared/ui/Header";
+import Footer from "./ui/Footer";
 import Main from "./ui/Main";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <Header />
       <Main />
+      <Footer />
     </>
   );
 };

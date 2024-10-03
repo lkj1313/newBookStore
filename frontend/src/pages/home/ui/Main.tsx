@@ -1,9 +1,13 @@
 import SimpleSlider from "../../../shared/ui/SimpleSlider/SimpleSlider";
+import DiscountBanner from "./DiscountBanner";
 
 const Main = () => {
   return (
-    <main className="lg:max-w-screen-lg mx-auto flex h-96 flex-col py-12">
-      <SimpleSlider />
+    <main>
+      <div className="lg:max-w-screen-lg mx-auto flex flex-col py-12 relative">
+        <SimpleSlider />
+      </div>
+      <DiscountBanner />
     </main>
   );
 };
