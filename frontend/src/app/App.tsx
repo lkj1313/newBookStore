@@ -4,7 +4,12 @@ import Router from "./Router";
 function App() {
   useDarkMode();
 
-  return <Router />;
+  return (
+    <>
+      {" "}
+      <Router />
+    </>
+  );
 }
 
 export default App;
