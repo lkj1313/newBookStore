@@ -1,4 +1,4 @@
-import Header from "../../shared/ui/Header";
+import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import Main from "./ui/Main";
 

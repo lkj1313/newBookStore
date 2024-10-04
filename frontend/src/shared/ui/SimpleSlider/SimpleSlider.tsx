@@ -22,39 +22,50 @@ export default function SimpleSlider() {
     refetch(); // 수동으로 쿼리 실행
   }, [refetch]);
 
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true, // 자동으로 넘어가기 설정
+    autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 640, // 640px 이하일 때 설정
+        settings: {
+          slidesToShow: 1, // 슬라이드를 2개씩 보여줌
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <>
-      <h2 className="pl-1 font-bold text-2xl mb-5 dark:text-white">
-        프론트엔드 오늘의 책!
-      </h2>
-      <div className="">
-        <Slider {...settings}>
-          {data &&
-            data.items.slice(0, 10).map((item: BookItem) => (
-              <div
-                className="flex items-center justify-center  "
-                key={item.isbn}
-              >
-                <div className="flex justify-center ">
-                  <img
-                    className="h-52 cursor-pointer"
-                    src={item.image}
-                    alt={item.title}
-                  />
+      <div className="flex flex-col-reverse relative sm:mt-20">
+        <div className="">
+          <Slider {...settings}>
+            {data &&
+              data.items.slice(0, 7).map((item: BookItem) => (
+                <div
+                  className="flex items-center justify-center  "
+                  key={item.isbn}
+                >
+                  <div className="flex justify-center ">
+                    <img
+                      className="h-52 cursor-pointer"
+                      src={item.image}
+                      alt={item.title}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-        </Slider>
+              ))}
+          </Slider>
+        </div>
+        <h2 className="pl-1 font-bold flex w-full justify-center mb-5  dark:text-white sm:text-2xl sm:justify-start sm:absolute sm:-top-14 left-10">
+          프론트엔드 오늘의 책!
+        </h2>
       </div>
     </>
   );

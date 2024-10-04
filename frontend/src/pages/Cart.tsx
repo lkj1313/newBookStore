@@ -1,4 +1,4 @@
-import Nav from "../shared/ui/Nav";
+import Nav from "../shared/ui/nav/Nav";
 
 const Cart = () => {
   return (

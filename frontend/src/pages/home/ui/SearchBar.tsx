@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import useFetchPosts from "../hooks/useFetchPost";
+import useFetchPosts from "../../../shared/hooks/useFetchPost";
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { data, refetch } = useFetchPosts(searchQuery);
@@ -24,9 +24,9 @@ const SearchBar = () => {
       />
       {/* 추천 검색어 리스트 */}
 
-      <div className="absolute -bottom-6 text-xs flex gap-x-4">
+      <div className="absolute -bottom-6 gap-x-4 hidden sm:text-xs sm:flex">
         <div
-          className="cursor-pointer"
+          className="cursor-pointer whitespace-nowrap"
           onClick={() => {
             setSearchQuery("모던 자바스크립트 Deep Dive");
           }}
@@ -34,7 +34,7 @@ const SearchBar = () => {
           모던 자바스크립트 Deep Dive
         </div>
         <div
-          className="cursor-pointer"
+          className="cursor-pointer whitespace-nowrap"
           onClick={() => {
             setSearchQuery("모던 리액트 Deep Dive");
           }}

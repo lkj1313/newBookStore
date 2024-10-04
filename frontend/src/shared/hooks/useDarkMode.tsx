@@ -7,7 +7,7 @@ export const useDarkMode = () => {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
     } else {
       document.documentElement.classList.remove("dark");
       document.body.style.backgroundColor = "white";
