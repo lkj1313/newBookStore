@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import SearchSuggestionList from "./SearchSuggestionList";
+import SearchSuggestionList from "../../../../entities/home/ui/SearchSuggestionList";
 
-import SearchForm from "../../../shared/ui/Header/search/SearchForm";
+import SearchForm from "./SearchForm";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,6 @@ const SearchBar = () => {
       <SearchForm searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <SearchSuggestionList setSearchQuery={setSearchQuery} />
-      {/* 검색 아이콘 */}
     </div>
   );
 };

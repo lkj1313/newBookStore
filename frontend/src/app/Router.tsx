@@ -5,17 +5,20 @@ import Cart from "../pages/cart/Cart";
 import Delivery from "../pages/delivery/Delivery";
 
 import SearchResultsPage from "../pages/searchResultsPage/SearchResultsPage";
+import Layout from "../shared/ui/layout/Layout";
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/delivery" element={<Delivery />} />
-        <Route path="/search/:query" element={<SearchResultsPage />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/delivery" element={<Delivery />} />
+          <Route path="/search/:query" element={<SearchResultsPage />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 };

@@ -2,16 +2,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import useFetchPosts from "../../../shared/hooks/useFetchPost";
-import { useEffect } from "react";
 import { BookItem } from "../../../shared/types/book";
+import { useQuery } from "@tanstack/react-query";
+import fetchPosts from "../../../shared/hooks/useFetchPost";
 
 export default function SimpleSlider() {
-  const { data, refetch } = useFetchPosts("프론트엔드");
-
-  useEffect(() => {
-    refetch(); // 수동으로 쿼리 실행
-  }, [refetch]);
+  const { data, isLoading } = useQuery({
+    queryKey: ["frontendData"],
+    queryFn: () => fetchPosts("프론트엔드"),
+  });
 
   const settings = {
     dots: true,
@@ -31,7 +30,7 @@ export default function SimpleSlider() {
       },
     ],
   };
-
+  if (isLoading) return <div>Loading...</div>;
   return (
     <>
       <div className="flex flex-col-reverse relative sm:mt-20">

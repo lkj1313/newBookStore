@@ -1,7 +1,7 @@
 import { CiSun } from "react-icons/ci";
 import { FaRegMoon } from "react-icons/fa";
 
-import useGlobalStore from "../../store/globalStore";
+import useGlobalStore from "../../../store/globalStore";
 import { Link } from "react-router-dom";
 
 const LeftNav = () => {

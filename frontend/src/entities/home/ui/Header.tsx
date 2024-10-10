@@ -1,5 +1,5 @@
-import Nav from "../../../shared/ui/nav/Nav";
-import SearchSection from "./SearchSection";
+import Nav from "../../../shared/ui/Header/nav/Nav";
+import SearchSection from "../../../shared/ui/Header/search/SearchSection";
 const Header = () => {
   return (
     <header>

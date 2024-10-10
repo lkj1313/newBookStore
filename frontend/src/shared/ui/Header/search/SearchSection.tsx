@@ -1,5 +1,5 @@
 import LogoSection from "./LogoSection";
-import SearchBar from "../../../shared/ui/Header/search/SearchBar";
+import SearchBar from "./SearchBar";
 
 const SearchSection = () => {
   return (

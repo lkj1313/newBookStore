@@ -1,24 +1,23 @@
 import { useParams } from "react-router-dom";
-import useFetchPosts from "../../shared/hooks/useFetchPost";
-import { useEffect } from "react";
+
 import { BookItem } from "../../shared/types/book";
-import SearchResultsItem from "./SearchResultsItem";
+import SearchResultsItem from "../../entities/searchResult/ui/SearchResultsItem";
+import { useQuery } from "@tanstack/react-query";
+import fetchPosts from "../../shared/hooks/useFetchPost";
 const SearchResultsPage = () => {
   const { query } = useParams();
   if (!query) {
     return <div>No query provided.</div>; // query가 없을 경우에 대한 처리
   }
-  const { data, refetch } = useFetchPosts(query);
-  useEffect(() => {
-    if (query) {
-      refetch();
-    }
-  }, [query]);
+  const { data, isLoading } = useQuery({
+    queryKey: ["posts", query],
+    queryFn: () => fetchPosts(query),
+  });
+  if (isLoading) return <div>Loading...</div>;
   return (
-    <div>
-      <h1>Search Results for: {query}</h1>
+    <div className="mt-5">
       {data ? (
-        <div>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {data.items.map((item: BookItem) => (
             <SearchResultsItem item={item} />
           ))}
