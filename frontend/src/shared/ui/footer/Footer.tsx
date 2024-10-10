@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flexjustify-center mt-40 bottom-0 items-center h-36 w-full bg-gray-100 dark:bg-gray-800 ">
+    <footer className="flex justify-center mt-40 bottom-0 items-center h-36 w-full bg-gray-100 dark:bg-gray-800 ">
       <div className="flex justify-between text-xs gap-2 text-black dark:text-black font-serif sm:w-1/2">
         <div>@L서점 - 2024</div>
         <div>Privacy Policy FAQ</div>

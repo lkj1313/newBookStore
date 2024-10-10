@@ -1,4 +1,4 @@
-import LogoSection from "./LogoSection";
+import LogoSection from "../../../shared/ui/Header/search/LogoSection";
 import SearchBar from "../../../shared/ui/Header/search/SearchBar";
 
 const SearchSection = () => {

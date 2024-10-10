@@ -15,7 +15,7 @@ const SearchResultsPage = () => {
   });
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div className="mt-5">
+    <div className="lg:max-w-screen-lg  m-auto mt-10">
       {data ? (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {data.items.map((item: BookItem) => (

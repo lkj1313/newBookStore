@@ -1,4 +1,3 @@
-import React from "react";
 import Nav from "../Header/nav/Nav";
 import SearchSection from "../Header/search/SearchSection";
 import Footer from "../footer/Footer";
