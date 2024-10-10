@@ -1,4 +1,4 @@
-import SimpleSlider from "../../../shared/ui/SimpleSlider/SimpleSlider";
+import SimpleSlider from "./SimpleSlider";
 import DiscountBanner from "./DiscountBanner";
 
 const Main = () => {

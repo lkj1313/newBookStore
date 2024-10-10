@@ -1,20 +1,11 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./simpleSlider.module.css";
-import useFetchPosts from "../../hooks/useFetchPost";
+
+import useFetchPosts from "../../../shared/hooks/useFetchPost";
 import { useEffect } from "react";
-interface BookItem {
-  author: string;
-  description: string;
-  discount: string;
-  image: string;
-  isbn: string;
-  link: string;
-  pubdate: string;
-  publisher: string;
-  title: string;
-}
+import { BookItem } from "../../../shared/types/book";
+
 export default function SimpleSlider() {
   const { data, refetch } = useFetchPosts("프론트엔드");
 
@@ -34,7 +25,7 @@ export default function SimpleSlider() {
       {
         breakpoint: 640, // 640px 이하일 때 설정
         settings: {
-          slidesToShow: 1, // 슬라이드를 2개씩 보여줌
+          slidesToShow: 1, // 슬라이드를 1개씩 보여줌
           slidesToScroll: 1,
         },
       },
@@ -63,7 +54,7 @@ export default function SimpleSlider() {
               ))}
           </Slider>
         </div>
-        <h2 className="pl-1 font-bold flex w-full justify-center mb-5  dark:text-white sm:text-2xl sm:justify-start sm:absolute sm:-top-14 left-10">
+        <h2 className="pl-1 font-bold flex w-full justify-center mb-5  dark:text-white sm:text-2xl sm:justify-start sm:absolute sm:-top-14 left-">
           프론트엔드 오늘의 책!
         </h2>
       </div>

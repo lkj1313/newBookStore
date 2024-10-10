@@ -1,6 +1,7 @@
-import Header from "./ui/Header";
-import Footer from "./ui/Footer";
-import Main from "./ui/Main";
+import Header from "../../entities/home/ui/Header";
+
+import Main from "../../entities/home/ui/Main";
+import Footer from "../../shared/ui/footer/Footer";
 
 const Home = () => {
   return (
