@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SearchSuggestionList from "../../../../entities/home/ui/SearchSuggestionList";
+import SearchSuggestionList from "../../../../features/searchSuggestion/SearchSuggestionList";
 
 import SearchForm from "./SearchForm";
 

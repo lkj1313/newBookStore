@@ -1,5 +1,5 @@
-import Nav from "../Header/nav/Nav";
-import SearchSection from "../Header/search/SearchSection";
+import Nav from "../header/nav/Nav";
+import SearchSection from "../header/search/SearchSection";
 import Footer from "../footer/Footer";
 
 const Layout = ({ children }: any) => {

@@ -12,17 +12,20 @@ const SearchForm: React.FC<SearchFormProps> = ({
   setSearchQuery,
 }) => {
   const navigate = useNavigate();
-  const handleSearch = () => {
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (searchQuery) {
       navigate(`/search/${searchQuery}`);
     }
   };
+
   return (
     <form onSubmit={handleSearch}>
       <SearchInput searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <button
+        type="submit" // type을 "submit"으로 설정
         className="absolute top-0 right-0 h-10 w-8 flex items-center justify-center rounded-lg cursor-pointer dark:text-black"
-        onClick={handleSearch}
       >
         <CiSearch size={20} />
       </button>

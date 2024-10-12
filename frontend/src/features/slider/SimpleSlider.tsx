@@ -2,9 +2,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { BookItem } from "../../../shared/types/book";
+import { BookItem } from "../../shared/types/book";
 import { useQuery } from "@tanstack/react-query";
-import fetchPosts from "../../../shared/hooks/useFetchPost";
+import fetchPosts from "../../shared/hooks/useFetchPost";
 
 export default function SimpleSlider() {
   const { data, isLoading } = useQuery({
