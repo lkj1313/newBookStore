@@ -5,11 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { BookItem } from "../../shared/types/book";
 import { useQuery } from "@tanstack/react-query";
 import fetchPosts from "../../shared/hooks/useFetchPost";
+import { Link } from "react-router-dom";
 
 export default function SimpleSlider() {
   const { data, isLoading } = useQuery({
     queryKey: ["frontendData"],
-    queryFn: () => fetchPosts("프론트엔드"),
+    queryFn: () => fetchPosts("프론트엔드", 10, 1, "date"),
   });
 
   const settings = {
@@ -30,6 +31,7 @@ export default function SimpleSlider() {
       },
     ],
   };
+  console.log(data);
   if (isLoading) return <div>Loading...</div>;
   return (
     <>
@@ -43,11 +45,13 @@ export default function SimpleSlider() {
                   key={item.isbn}
                 >
                   <div className="flex justify-center ">
-                    <img
-                      className="h-52 cursor-pointer"
-                      src={item.image}
-                      alt={item.title}
-                    />
+                    <Link to={`/bookDetail/${item.isbn}`}>
+                      <img
+                        className="h-52 cursor-pointer"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                    </Link>
                   </div>
                 </div>
               ))}

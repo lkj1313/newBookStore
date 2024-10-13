@@ -9,7 +9,7 @@ const Layout = ({ children }: any) => {
         <Nav />
         <SearchSection />
       </header>
-      <main>{children}</main>
+      <main className="h-full w-full mb-60">{children}</main>
       <footer>
         <Footer />
       </footer>

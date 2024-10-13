@@ -1,10 +1,11 @@
 const fetchPosts = async (
   searchQuery: string,
-  display: number,
-  start: number = 1
+  display: number = 1,
+  start: number = 1,
+  sort: string = "sim"
 ) => {
   const response = await fetch(
-    `http://localhost:3000/search/book?query=${searchQuery}&display=${display}&start=${start}`
+    `http://localhost:3000/search/book?query=${searchQuery}&display=${display}&start=${start}&sort=${sort}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch posts");

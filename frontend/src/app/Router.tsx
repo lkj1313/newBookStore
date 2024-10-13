@@ -4,8 +4,9 @@ import Login from "../pages/login/Login";
 import Cart from "../pages/cart/Cart";
 import Delivery from "../pages/delivery/Delivery";
 
-import SearchResultsPage from "../pages/searchResultsPage/SearchResultsPage";
 import Layout from "../shared/ui/layout/Layout";
+import SearchResultsPage from "../pages/searchResults/SearchResultsPage";
+import BookDetailPage from "../pages/bookDetail/BookDetailPage";
 
 const Router = () => {
   return (
@@ -16,7 +17,8 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/delivery" element={<Delivery />} />
-          <Route path="/search/:query" element={<SearchResultsPage />} />
+          <Route path="/searchResult/:query" element={<SearchResultsPage />} />
+          <Route path="/bookDetail/:isbn" element={<BookDetailPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

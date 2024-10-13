@@ -16,7 +16,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (searchQuery) {
-      navigate(`/search/${searchQuery}`);
+      navigate(`/searchResult/${searchQuery}`);
     }
   };
 
