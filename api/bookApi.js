@@ -11,8 +11,12 @@ const app = express();
 // CORS 설정 추가
 app.use(cors());
 
+// 환경 변수 출력 (디버깅 용도)
 const client_id = process.env.NAVER_CLIENT_ID;
 const client_secret = process.env.NAVER_CLIENT_SECRET;
+
+console.log("NAVER_CLIENT_ID:", client_id); // client_id 출력
+console.log("NAVER_CLIENT_SECRET:", client_secret); // client_secret 출력
 
 app.get("/search/book", async function (req, res) {
   const {
