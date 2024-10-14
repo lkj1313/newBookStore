@@ -5,7 +5,7 @@ const fetchPosts = async (
   sort: string = "sim"
 ) => {
   const response = await fetch(
-    `https://new-book-store-7m3b.vercel.app/search/book?query=${encodeURIComponent(
+    `http://localhost:5173/api/search/book?query=${encodeURIComponent(
       searchQuery
     )}&display=${display}&start=${start}&sort=${sort}`
   );
