@@ -4,12 +4,17 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 // 환경 변수 로드
-dotenv.config();
+dotenv.config({ path: "../../.env" });
 
 const app = express();
 
 // CORS 설정 추가
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // 모든 도메인에서의 요청을 허용
+    methods: ["GET", "POST"], // 허용할 HTTP 메서드
+  })
+);
 
 // 환경 변수 출력 (디버깅 용도)
 const client_id = process.env.NAVER_CLIENT_ID;
