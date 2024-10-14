@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const fetchBookByIsbn = async (isbn: string) => {
   const response = await fetch(
-    `https://https://new-book-store-7m3b.vercel.app//api/search/book?query=${isbn}`
+    `https://https://new-book-store-7m3b.vercel.app/api/index/search/book?query=${isbn}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch book data");
