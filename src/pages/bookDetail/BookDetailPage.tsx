@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchBookByIsbn = async (isbn: string) => {
-  const response = await fetch(`/api/book/search/book?query=${isbn}`);
+  const response = await fetch(
+    `https://new-book-store-4fo2.vercel.app/api/book/search/book?query=${isbn}`
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch book data");
   }
