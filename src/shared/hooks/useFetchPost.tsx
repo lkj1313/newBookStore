@@ -5,7 +5,7 @@ const fetchPosts = async (
   sort: string = "sim"
 ) => {
   const response = await fetch(
-    `/api/bookApi/search/book?query=${encodeURIComponent(
+    `/api/search/book?query=${encodeURIComponent(
       searchQuery
     )}&display=${display}&start=${start}&sort=${sort}`
   );
