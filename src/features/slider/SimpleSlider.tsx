@@ -31,7 +31,7 @@ export default function SimpleSlider() {
       },
     ],
   };
-  console.log(data);
+
   if (isLoading) return <div>Loading...</div>;
   return (
     <>

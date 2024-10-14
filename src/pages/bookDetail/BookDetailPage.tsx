@@ -20,7 +20,6 @@ const BookDetailPage = () => {
   });
   if (isLoading) return <div>Loading</div>;
   const book = data?.items?.[0]; // 가져온 책 정보 사용
-  console.log(book);
 
   return (
     <div className="p-3 m-auto mt-10 lg:max-w-screen-lg sm:p-0">
