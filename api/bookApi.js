@@ -1,8 +1,10 @@
-const express = require("express");
-const cors = require("cors"); // CORS 미들웨어 추가
-const axios = require("axios"); // axios 사용
-const dotenv = require("dotenv"); // dotenv 사용
-dotenv.config(); // 환경 변수 로드
+import express from "express";
+import cors from "cors";
+import axios from "axios";
+import dotenv from "dotenv";
+
+// 환경 변수 로드
+dotenv.config();
 
 const app = express();
 
@@ -23,14 +25,11 @@ app.get("/search/book", async function (req, res) {
 
   let api_url = "";
 
-  // type에 따라 일반 검색 또는 ISBN 검색 결정
   if (type === "isbn") {
-    // ISBN 검색인 경우
     api_url = `https://openapi.naver.com/v1/search/book_adv?d_isbn=${encodeURIComponent(
       query
     )}&display=${display}&start=${start}&sort=${sort}`;
   } else {
-    // 일반 검색인 경우
     api_url = `https://openapi.naver.com/v1/search/book?query=${encodeURIComponent(
       query
     )}&display=${display}&start=${start}&sort=${sort}`;
@@ -43,7 +42,7 @@ app.get("/search/book", async function (req, res) {
         "X-Naver-Client-Secret": client_secret,
       },
     });
-    res.status(200).json(response.data); // 성공적으로 데이터를 반환
+    res.status(200).json(response.data);
   } catch (error) {
     console.error("Error fetching data from Naver API:", error);
     res.status(500).json({ error: "Failed to fetch data from Naver API" });
@@ -51,4 +50,4 @@ app.get("/search/book", async function (req, res) {
 });
 
 // Vercel의 서버리스 함수로 Express 앱을 내보냅니다.
-module.exports = app;
+export default app;
