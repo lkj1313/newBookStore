@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "build/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/api/index.js",
+      "src": "api/search.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/search/book",
+      "dest": "api/search.js"
     }
   ]
 }
