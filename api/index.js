@@ -4,7 +4,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 // 환경 변수 로드
-dotenv.config({ path: "../../.env" });
+dotenv.config({ path: ".env" });
 
 const app = express();
 
