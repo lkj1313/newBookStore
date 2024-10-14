@@ -5,7 +5,7 @@ const fetchPosts = async (
   sort: string = "sim"
 ) => {
   const response = await fetch(
-    `http://localhost:5173/api/search/book?query=${encodeURIComponent(
+    `https://dreamy-vacherin-712ef3.netlify.app/api/search/book?query=${encodeURIComponent(
       searchQuery
     )}&display=${display}&start=${start}&sort=${sort}`
   );
