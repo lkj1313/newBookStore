@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/search/book",
+      "dest": "src/api/index.js"
+    }
+  ]
+}
