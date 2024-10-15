@@ -1,8 +1,23 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/search/book",
       "dest": "src/api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }

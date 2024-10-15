@@ -36,8 +36,8 @@ app.get("/search/book", async (req, res) => {
   try {
     const response = await axios.get(api_url, {
       headers: {
-        "X-Naver-Client-Id": "12N7s5caCx4M60sHs_KJ",
-        "X-Naver-Client-Secret": "ynrfN9WeSh",
+        "X-Naver-Client-Id": process.env.NAVER_CLIENT_ID,
+        "X-Naver-Client-Secret": process.env.NAVER_CLIENT_SECRET,
       },
     });
     res.status(200).json(response.data);
