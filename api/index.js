@@ -11,7 +11,7 @@ const app = express();
 // CORS 설정: 모든 출처에서의 요청 허용
 app.use(
   cors({
-    origin: "*", // 또는 특정 도메인만 허용하고 싶다면 'https://your-allowed-domain.com'으로 변경
+    origin: "*",
   })
 );
 
