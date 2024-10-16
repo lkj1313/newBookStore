@@ -5,11 +5,11 @@ import SearchSection from "../header/search/SearchSection";
 const Layout = ({ children }: any) => {
   return (
     <>
-      <header>
+      <header className="">
         <Nav />
         <SearchSection />
       </header>
-      <main className="h-full w-full mb-60">{children}</main>
+      <main className="h-full w-full mb-60 p-3 ">{children}</main>
       <footer>
         <Footer />
       </footer>

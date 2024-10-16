@@ -20,27 +20,33 @@ const BookDetailPage = () => {
     queryFn: () => fetchBookByIsbn(isbn!),
     enabled: !!isbn, // ISBN이 있을 때만 요청 실행
   });
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading)
+    return (
+      <div className="p-3 mt-10 m-auto lg:max-w-screen-lg dark:text-white ">
+        Loading...
+      </div>
+    );
   const book = data?.items?.[0]; // 가져온 책 정보 사용
 
   return (
-    <div className="p-3 m-auto mt-10 lg:max-w-screen-lg sm:p-0">
+    <div className="p-3 mt-10 m-auto lg:max-w-screen-lg dark:text-white ">
       <div className="flex w-full h-64 gap-x-3">
         {" "}
         <div className="h-full border">
           <img className="h-full cursor-pointer" src={book.image}></img>
         </div>
-        <div className="flex flex-col relative ">
+        <div className="flex flex-col w-full relative ">
           <div className="text-sm  flex font-bold mb-2 sm:text-xl">
             {book.title}
           </div>
           <div className="text-xs sm:text-base">{book.author}</div>
           <div className="text-xs font-semibold">{book.publisher}</div>
           <div className="h-20 w-full flex absolute bottom-0 ">
-            <div className="w-1/4 flex items-center justify-center border  bg-slate-50 text-xs sm:text-base">
+            <div className="w-1/4 flex items-center justify-center border  bg-slate-50 text-xs sm:text-base text-black">
               소장{" "}
             </div>
-            <div className="w-3/4 p-1 pt-4 pb-4 gap-y-1 flex flex-col justify-center font-light border text-[10px] sm:p-4 sm:text-sm">
+
+            <div className="w-3/4 p-1 pt-4 pb-4 gap-y-1 flex flex-col justify-center font-light border text-[10px] sm:p-4 sm:text-sm dark:text-white">
               <div className="w-full flex justify-between">
                 {" "}
                 <div>
